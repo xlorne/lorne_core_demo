@@ -42,7 +42,7 @@ public class DemoServiceImpl implements DemoService {
             sessionUser.put("pwd",pwd);
 
             String token = TokenUtils.putValue(sessionUser,60*2);
-            
+
             res.put("token",token);
             res.put("name",name);
             return res;
