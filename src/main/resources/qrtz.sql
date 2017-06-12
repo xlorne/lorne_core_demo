@@ -2,7 +2,8 @@
 SQLyog Ultimate v8.32 
 MySQL - 5.6.21-log : Database - qrtz
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -104,8 +105,6 @@ CREATE TABLE `qrtz_job_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_job_details` */
-
-insert  into `qrtz_job_details`(`SCHED_NAME`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`JOB_CLASS_NAME`,`IS_DURABLE`,`IS_NONCONCURRENT`,`IS_UPDATE_DATA`,`REQUESTS_RECOVERY`,`JOB_DATA`) values ('scheduer-public','6da64b5bd2ee-17aed218-4b25-48c6-ae09-ae21f83a1846','DEFAULT',NULL,'com.mrwater.job.DayProfitJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:57 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-4f14f625-0507-4ada-b836-954429445eda','DEFAULT',NULL,'com.mrwater.job.AutoOrderStrategyJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-586c8fb1-bc79-4330-919d-28083a2e8dd7','DEFAULT',NULL,'com.mrwater.job.BalanceJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:57 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-76ae139d-32e6-4a1b-aa0d-875be4fb2049','DEFAULT',NULL,'com.mrwater.job.ReconciliationJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-81296d4a-b20f-4890-b897-a81e8c67b3bc','DEFAULT',NULL,'com.mrwater.job.OrderCancelJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-83a91816-5554-4132-b889-64624b4983e0','DEFAULT',NULL,'com.mrwater.job.OrderClearJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-8e1e87e2-0b13-45e5-9fb3-933a5276f258','DEFAULT',NULL,'com.mrwater.job.EmployeeJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n'),('scheduer-public','6da64b5bd2ee-eda03b07-a628-4765-afd8-f7f3006231a0','DEFAULT',NULL,'com.mrwater.job.OrderFinishedJob','0','0','0','0','#\r\n#Mon Mar 13 11:21:56 CST 2017\r\n');
 
 /*Table structure for table `qrtz_locks` */
 
@@ -214,8 +213,6 @@ CREATE TABLE `qrtz_triggers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `qrtz_triggers` */
-
-insert  into `qrtz_triggers`(`SCHED_NAME`,`TRIGGER_NAME`,`TRIGGER_GROUP`,`JOB_NAME`,`JOB_GROUP`,`DESCRIPTION`,`NEXT_FIRE_TIME`,`PREV_FIRE_TIME`,`PRIORITY`,`TRIGGER_STATE`,`TRIGGER_TYPE`,`START_TIME`,`END_TIME`,`CALENDAR_NAME`,`MISFIRE_INSTR`,`JOB_DATA`) values ('scheduer-public','com.mrwater.job.AutoOrderStrategyJob','repeatday_group','6da64b5bd2ee-4f14f625-0507-4ada-b836-954429445eda','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375316000,0,NULL,0,''),('scheduer-public','com.mrwater.job.BalanceJob','repeatday_group','6da64b5bd2ee-586c8fb1-bc79-4330-919d-28083a2e8dd7','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375317000,0,NULL,0,''),('scheduer-public','com.mrwater.job.DayProfitJob','repeatday_group','6da64b5bd2ee-17aed218-4b25-48c6-ae09-ae21f83a1846','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375317000,0,NULL,0,''),('scheduer-public','com.mrwater.job.EmployeeJob','repeatday_group','6da64b5bd2ee-8e1e87e2-0b13-45e5-9fb3-933a5276f258','DEFAULT',NULL,1489420800000,-1,5,'WAITING','CRON',1489375316000,0,NULL,0,''),('scheduer-public','com.mrwater.job.OrderCancelJob','repeatday_group','6da64b5bd2ee-81296d4a-b20f-4890-b897-a81e8c67b3bc','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375316000,0,NULL,0,''),('scheduer-public','com.mrwater.job.OrderClearJob','repeatday_group','6da64b5bd2ee-83a91816-5554-4132-b889-64624b4983e0','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375316000,0,NULL,0,''),('scheduer-public','com.mrwater.job.OrderFinishedJob','repeatday_group','6da64b5bd2ee-eda03b07-a628-4765-afd8-f7f3006231a0','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375316000,0,NULL,0,''),('scheduer-public','com.mrwater.job.ReconciliationJob','repeatday_group','6da64b5bd2ee-76ae139d-32e6-4a1b-aa0d-875be4fb2049','DEFAULT',NULL,1489376280000,1489376220000,5,'WAITING','CRON',1489375316000,0,NULL,0,'');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -1,18 +1,20 @@
 package com.demo.service.impl;
 
+import com.demo.job.DemoJob;
 import com.demo.model.User;
 import com.demo.service.DemoService;
 import com.demo.utils.SessionUtils;
 import com.lorne.core.framework.exception.ServiceException;
+import com.lorne.core.framework.job.service.SchedulerService;
+import com.lorne.core.framework.utils.DateUtil;
 import com.lorne.core.framework.utils.TokenUtils;
 import com.lorne.core.framework.utils.json.JsonUtils;
 import org.apache.commons.lang.StringUtils;
+import org.quartz.JobKey;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by lorne on 2017/6/12.
@@ -20,6 +22,10 @@ import java.util.Map;
 @Service
 public class DemoServiceImpl implements DemoService {
 
+
+
+    @Autowired
+    private SchedulerService schedulerService;
 
     @Override
     public Map<String, Object> login(String json) throws ServiceException {
@@ -66,6 +72,15 @@ public class DemoServiceImpl implements DemoService {
         list.add(createUser(sessionUser));
         list.add(createUser(sessionUser));
         return list;
+    }
+
+
+    @Override
+    public boolean addJob(String json) throws ServiceException {
+        String data = JsonUtils.getString(json,"data","");
+        Date time =  DateUtil.addSecond(new Date(),10);//延迟10秒
+        JobKey jobKey =  schedulerService.addSchedulerByRunDate(time, DemoJob.class,data);
+        return jobKey!=null;
     }
 
     private User createUser(Map<String, Object> sessionUser) {

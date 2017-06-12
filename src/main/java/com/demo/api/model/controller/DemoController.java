@@ -46,4 +46,14 @@ public class DemoController extends RestController {
         });
     }
 
+    @RequestMapping("/addJob")
+    public void addJob(HttpServletRequest request, HttpServletResponse response){
+        initEncode(request, response, new ITokenService() {
+            @Override
+            public Object init(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Map<String, Object> sessionUser, String json) throws ServiceException {
+                return demoService.addJob(json);
+            }
+        });
+    }
+
 }

@@ -28,5 +28,18 @@ public class DemoControllerTest extends BaseTest {
     }
 
 
+    /**
+     * 添加job
+     */
+    @Test
+    public void addJob(){
+        execute("demo/addJob",true, new IMapParam() {
+            @Override
+            public void setParams(JSONObject params) {
+                params.put("data","my test data .");
+            }
+        });
+    }
+
 
 }

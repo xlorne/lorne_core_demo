@@ -14,4 +14,7 @@ public interface DemoService {
     Map<String,Object> login(String json)throws ServiceException;
 
     List<User> list(Map<String, Object> sessionUser) throws ServiceException;
+
+    boolean addJob(String json) throws ServiceException;
+
 }

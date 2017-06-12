@@ -51,6 +51,12 @@
             <version>1.0.0.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.lorne.quartz</groupId>
+            <artifactId>lorne_quartz</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>
