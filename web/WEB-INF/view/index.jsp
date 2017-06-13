@@ -12,8 +12,7 @@
 </head>
 <body>
 
- 关于lorne_core框架使用介绍
-
+    <a href="https://github.com/1991wangliang/lorne_core_demo">关于lorne_core_demo 框架使用教程</a>
 
 
 </body>
